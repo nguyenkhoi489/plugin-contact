@@ -1,0 +1,81 @@
+.nkd-contact .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+}
+.nkd-contact .card {
+    box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
+    margin-bottom: 1rem;
+}
+.nkd-contact .card-primary.card-outline {
+    border-top: 3px solid #007bff;
+}
+.nkd-contact .card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, .03);
+    border-bottom: 0 solid rgba(0, 0, 0, .125);
+}
+.nkd-contact .card-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    padding: .75rem 1.25rem;
+    position: relative;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.nkd-contact .card-title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+.nkd-contact .card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    padding-top: 0;
+}
+.nkd-contact .form-control {
+    display: block;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    width: 35%;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.row {
+    display: flex;
+    justify-content: center;
+
+}
+.small-8 {
+    width: 70%;
+}
+.small-4 {
+    width: 30%;
+}
+.demo-image .img img{
+    border: 1px solid;
+}
