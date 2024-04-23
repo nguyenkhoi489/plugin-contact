@@ -74,6 +74,12 @@
             </td>
             </tr>
             <tr valign="top">
+                <th scope="row">shopee</th>
+                <td><input placeholder="0123 456 789" type="text" name="config_shopee" value="<?php echo get_option('config_shopee'); ?>" />
+                <input placeholder="Tooltip Tile" type="text" name="config_shopee_tooltip" value="<?php echo get_option('config_shopee_tooltip'); ?>" />
+            </td>
+            </tr>
+            <tr valign="top">
                 <th scope="row">Link map</th>
                 <td>
                     <input placeholder="Link google map" type="text" name="config_map_url" value="<?php echo get_option('config_map_url'); ?>" />

@@ -8,43 +8,43 @@
         </div>
         <div class="card-body">
             <?php
-            $allItem = [];
-            if (get_option('config_hotline')) {
-                $allItem['config_hotline'] = get_option('config_hotline');
-            }
-            if (get_option('config_zalo')) {
-                $allItem['config_zalo'] = get_option('config_zalo');
-            }
-            if (get_option('config_telegram')) {
-                $allItem['config_telegram'] = get_option('config_telegram');
-            }
-            if (get_option('config_instagram')) {
-                $allItem['config_instagram'] = get_option('config_instagram');
-            }
-            if (get_option('config_youtube')) {
-                $allItem['config_youtube'] = get_option('config_youtube');
-            }
-            if (get_option('config_tiktok')) {
-                $allItem['config_tiktok'] = get_option('config_tiktok');
-            }
-            if (get_option('config_fanpage')) {
-                $allItem['config_fanpage'] = get_option('config_fanpage');
-            }
-            if (get_option('config_whatsapp')) {
-                $allItem['config_whatsapp'] = get_option('config_whatsapp');
-            }
-            if (get_option('config_viber')) {
-                $allItem['config_viber'] = get_option('config_viber');
-            }
-            if (get_option('config_map_url')) {
-                $allItem['config_map_url'] = get_option('config_map_url');
-            }
-            if (get_option('config_contact_url')) {
-                $allItem['config_contact_url'] = get_option('config_contact_url');
-            }
-            if (get_option('config_form')) {
-                $allItem['config_form'] = get_option('config_form');
-            }
+                $allItem = [];
+                if (get_option('config_hotline')) {
+                    $allItem['config_hotline'] = get_option('config_hotline');
+                }
+                if (get_option('config_zalo')) {
+                    $allItem['config_zalo'] = get_option('config_zalo');
+                }
+                if (get_option('config_telegram')) {
+                    $allItem['config_telegram'] = get_option('config_telegram');
+                }
+                if (get_option('config_instagram')) {
+                    $allItem['config_instagram'] = get_option('config_instagram');
+                }
+                if (get_option('config_youtube')) {
+                    $allItem['config_youtube'] = get_option('config_youtube');
+                }
+                if (get_option('config_tiktok')) {
+                    $allItem['config_tiktok'] = get_option('config_tiktok');
+                }
+                if (get_option('config_fanpage')) {
+                    $allItem['config_fanpage'] = get_option('config_fanpage');
+                }
+                if (get_option('config_whatsapp')) {
+                    $allItem['config_whatsapp'] = get_option('config_whatsapp');
+                }
+                if (get_option('config_viber')) {
+                    $allItem['config_viber'] = get_option('config_viber');
+                }
+                if (get_option('config_map_url')) {
+                    $allItem['config_map_url'] = get_option('config_map_url');
+                }
+                if (get_option('config_contact_url')) {
+                    $allItem['config_contact_url'] = get_option('config_contact_url');
+                }
+                if (get_option('config_form')) {
+                    $allItem['config_form'] = get_option('config_form');
+                }
             ?>
             <?php if (isset($_GET['settings-updated'])) { ?>
                 <div id="message" class="updated">
@@ -62,6 +62,14 @@
                                 </th>
                                 <td>
                                     <input type="checkbox" name="config_setting_enable" <?= get_option('config_setting_enable') == "on" ? "checked" : "" ?> id="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Enable/Disable Form
+                                </th>
+                                <td>
+                                    <input type="checkbox" name="config_setting_enable_form" <?= get_option('config_setting_enable_form') == "on" ? "checked" : "" ?> id="">
                                 </td>
                             </tr>
                             <tr>

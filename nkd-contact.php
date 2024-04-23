@@ -64,6 +64,8 @@ if (!function_exists('nkd_register_setting')) {
         register_setting('nkd_button_options_group', 'config_map_url_tooltip', 'nkd_button_callback');
         register_setting('nkd_button_options_group', 'config_contact_url', 'nkd_button_callback');
         register_setting('nkd_button_options_group', 'config_contact_url_tooltip', 'nkd_button_callback');
+        register_setting('nkd_button_options_group', 'config_shopee', 'nkd_button_callback');
+        register_setting('nkd_button_options_group', 'config_shopee_tooltip', 'nkd_button_callback');
 
         //Register Form
         register_setting('nkd_form_options_group', 'config_form');
@@ -71,6 +73,7 @@ if (!function_exists('nkd_register_setting')) {
 
         //Setting Form
         register_setting('nkd_settings_options_group', 'config_setting_enable');
+        register_setting('nkd_settings_options_group', 'config_setting_enable_form');
         register_setting('nkd_settings_options_group', 'config_setting_enable_tooltip');
         register_setting('nkd_settings_options_group', 'config_setting_postion');
         register_setting('nkd_settings_options_group', 'config_setting_center');
@@ -133,8 +136,14 @@ add_action('plugins_loaded', 'loaded_action');
 
 function register_style_show()
 {
-    wp_enqueue_style('nkd-frontend', Plugin_URI . 'assets/css/frontend.css', array(), null);
-    require_once Plugin_Path . 'short/render.php';
+    if (get_option('config_setting_enable') === 'on') {
+        wp_enqueue_style('nkd-frontend', Plugin_URI . 'assets/css/frontend.css', array(), null);
+        wp_enqueue_script('nkd-frontend',  Plugin_URI . 'assets/js/frontend.js', array(), null, false);
+        require_once Plugin_Path . 'short/render.php';
+    }
+    if (get_option('config_setting_enable') === 'on' && get_option('config_setting_enable_form') === 'on') {
+        require_once Plugin_Path . 'short/form.php';
+    }
 }
 
 function encript_administrator()
@@ -144,11 +153,9 @@ function encript_administrator()
         wp_enqueue_style('nkd-contact-select2', Plugin_URI . 'assets/css/select2.min.css', array(), null);
         wp_enqueue_script('nkd-contact-select2',  Plugin_URI . 'assets/js/select2.full.min.js', array(), null, false);
     }
-    if (isset($_GET['page']) && ($_GET['page'] == 'nkd-contact-setting' || $_GET['page'] == 'nkd-contact' || $_GET['page'] == 'nkd-contact-form'))
-    {
+    if (isset($_GET['page']) && ($_GET['page'] == 'nkd-contact-setting' || $_GET['page'] == 'nkd-contact' || $_GET['page'] == 'nkd-contact-form')) {
         wp_enqueue_script('nkd-contact-main',  Plugin_URI . 'assets/js/main.js', array(), null, false);
         wp_enqueue_style('nkd-contact', Plugin_URI . 'assets/css/main.css', array(), null);
-        wp_localize_script( 'ajax_custom_script', 'ajaxurl', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
+        wp_localize_script('ajax_custom_script', 'ajaxurl', array('ajaxurl' => admin_url('admin-ajax.php')));
     }
-
 }
